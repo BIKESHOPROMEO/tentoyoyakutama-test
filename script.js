@@ -16,6 +16,7 @@ function validateReservation(data) {
   return null; // 問題なし
 }
 
+
 window.addEventListener('DOMContentLoaded', () => {
 document.getElementById("submitBtn").addEventListener("click", async () => {
    showLoading();
@@ -75,4 +76,5 @@ document.getElementById("submitBtn").addEventListener("click", async () => {
     hideLoading();
   }
 });
+
 });
