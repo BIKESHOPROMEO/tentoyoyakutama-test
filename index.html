@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>店頭予約入力フォーム</title>
+  <link rel="stylesheet" href="style.css"> <!-- ← ここが超重要！ -->
+</head>
+<body>
+
+<form id="reservationForm" class="form-container" onsubmit="return false;">
+<h2>店頭予約入力フォーム</h2>
+
+<div class="form-group date-group">
+<label>※必須：日付</label>
+<div class="date-row">
+<input type="date" id="dateInput" />
+</div>
+</div>
+
+<div class="form-group">
+<label>※必須：開始時間</label>
+<select id="startTime">
+  <option value="10:00">10:00</option>
+  <option value="11:00">11:00</option>
+  <option value="12:00">12:00</option>
+  <option value="13:00">13:00</option>
+  <option value="14:00">14:00</option>
+  <option value="15:00">15:00</option>
+  <option value="16:00">16:00</option>
+  <option value="17:00">17:00</option>
+  <option value="18:00">18:00</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>※必須：終了時間</label>
+<select id="endTime">
+  <option value="10:00">11:00</option>
+  <option value="11:00">12:00</option>
+  <option value="12:00">13:00</option>
+  <option value="13:00">14:00</option>
+  <option value="14:00">15:00</option>
+  <option value="15:00">16:00</option>
+  <option value="16:00">17:00</option>
+  <option value="17:00">18:00</option>
+  <option value="18:00">19:00</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>※必須：お客様名</label>
+<input type="text" id="customerName" placeholder="フルネームでご記入ください">
+</div>
+
+<div class="form-group">
+<label>※必須：電話番号</label>
+<input type="tel" id="phoneNumber" placeholder="ハイフン無しで090xxxxxxxx">
+</div>
+
+<div class="form-group">
+  <label>※必須：メールアドレス【受付担当者のアドレス】</label>
+  <input type="email" id="emailAddress" placeholder="example@example.com">
+</div>
+
+<div class="form-group">
+<label>※必須：車種</label>
+<input type="text" id="vehicleModel" placeholder="バイク名・排気量など">
+</div>
+
+<div class="form-group">
+<label>※必須：作業内容</label>
+<select id="workType">
+  <option value="">選択してください</option>
+  <option value="1ヶ月点検">1ヶ月点検</option>
+  <option value="6ヶ月点検">6ヶ月点検</option>
+  <option value="12ヶ月点検">12ヶ月点検</option>
+  <option value="オイル交換">オイル交換</option>
+  <option value="タイヤ交換">タイヤ交換</option>
+  <option value="その他修理">その他修理</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>備考【追記事項があれば】</label>
+<textarea id="note" placeholder="ご要望や事前準備などご記入ください"></textarea>
+</div>
+
+<button id="submitBtn">予約を送信する</button>
+<div id="result" class="result-message"></div>
+</form>
+<div class="loading-overlay" id="loadingOverlay">
+  <div class="spinner"></div>
+  <div class="loading-text">登録中です。しばらくお待ちください。</div>
+</div>
+<script src="script.js"></script> <!-- ← bodyの最後に入れる -->
+</body>
+</html>
