@@ -16,14 +16,13 @@ function validateReservation(data) {
   return null; // 問題なし
 }
 
-
 window.addEventListener('DOMContentLoaded', () => {
 document.getElementById("submitBtn").addEventListener("click", async () => {
    showLoading();
   const resultEl = document.getElementById('result');
 
   const data = {
-    action: "storeReservation",
+    action: "storeReservationtest",
     date: document.getElementById("dateInput").value,
     start: document.getElementById("startTime").value,
     end: document.getElementById("endTime").value,
@@ -55,7 +54,7 @@ document.getElementById("submitBtn").addEventListener("click", async () => {
 
     const confirmed = window.confirm('登録が完了しました。\nカレンダー画面に戻りますか？');
     if (confirmed) {
-      window.location.href = 'https://calendar-ui-three.vercel.app/';
+      window.location.href = 'https://calendar-ui-test.vercel.app/';
     }
 
     resultEl.style.color = 'green';
@@ -76,5 +75,4 @@ document.getElementById("submitBtn").addEventListener("click", async () => {
     hideLoading();
   }
 });
-
 });
